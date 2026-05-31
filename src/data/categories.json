@@ -1,0 +1,113 @@
+{
+  "Ткань ПВХ": {
+    "slug": "tkan-pvkh",
+    "image": "/images/categories/tkan-pvkh-gladkokrashenaya.jpg",
+    "children": [
+      { "name": "Гладкокрашеная", "image": "/images/categories/tkan-pvkh-gladkokrashenaya.jpg" },
+      { "name": "Дизайн", "image": "/images/categories/tkan-pvkh-dizayn.jpg" },
+      { "name": "Камуфляж", "image": "/images/categories/tkan-pvkh-kamuflyazh.jpg" }
+    ]
+  },
+  "Нейлон": {
+    "slug": "neylon",
+    "image": "/images/products/product_74.jpg",
+    "children": []
+  },
+  "Ткань ПУ": {
+    "slug": "tkan-pu",
+    "image": "/images/products/product_84.jpg",
+    "children": []
+  },
+  "Оксфорд": {
+    "slug": "oksford",
+    "image": "/images/categories/oksford-210d.jpg",
+    "children": [
+      { "name": "Оксфорд 210Д", "image": "/images/categories/oksford-210d.jpg" },
+      { "name": "Оксфорд 600Д", "image": "/images/categories/oksford-600d.jpg" },
+      { "name": "Оксфорд «Футбол»", "image": "/images/categories/oksford-football.jpg" }
+    ]
+  },
+  "Ткань для спецодежды": {
+    "slug": "tkan-dlya-spetsodezhdy",
+    "image": "/images/categories/tkandlya-spetsodezhdy-alova.jpg",
+    "children": [
+      { "name": "Алова", "image": "/images/categories/tkandlya-spetsodezhdy-alova.jpg" },
+      { "name": "Грета", "image": "/images/categories/tkandlya-spetsodezhdy-greta.jpg" }
+    ]
+  },
+  "Лента ранцевая": {
+    "slug": "lenta-rantsevaya",
+    "image": "/images/categories/lenta-rantsevaya-stropa-900d.jpg",
+    "children": [
+      { "name": "Стропа 900D", "image": "/images/categories/lenta-rantsevaya-stropa-900d.jpg" },
+      { "name": "Стропа 450D", "image": "/images/categories/lenta-rantsevaya-stropa-450d.jpg" },
+      { "name": "Стропа 300D", "image": "/images/categories/lenta-rantsevaya-stropa-300d.jpg" },
+      { "name": "Стропа «Елка»", "image": "/images/categories/lenta-rantsevaya-stropa-elka.jpg" },
+      { "name": "Тесьма окантовочная", "image": "/images/categories/lenta-rantsevaya-tesma-okantovochnaya.jpg" },
+      { "name": "Стропа нейлоновая", "image": "/images/categories/lenta-rantsevaya-stropa-neylonovaya.jpg" }
+    ]
+  },
+  "Сетка": {
+    "slug": "setka",
+    "image": "/images/products/product_246.jpg",
+    "children": []
+  },
+  "Пленка ПВХ": {
+    "slug": "plenka-pvkh",
+    "image": "/images/products/product_248.jpg",
+    "children": []
+  },
+  "Молнии": {
+    "slug": "molnii",
+    "image": "/images/products/product_250.jpg",
+    "children": []
+  },
+  "Бегунки к молнии": {
+    "slug": "begunki-k-molnii",
+    "image": "/images/products/product_252.jpg",
+    "children": []
+  },
+  "Фурнитура металлическая": {
+    "slug": "furnitura-metallicheskaya",
+    "image": "/images/categories/furnitura-metallicheskaya-karabiny.jpg",
+    "children": [
+      { "name": "Карабины", "image": "/images/categories/furnitura-metallicheskaya-karabiny.jpg" },
+      { "name": "Полукольца", "image": "/images/categories/furnitura-metallicheskaya-polukolca.jpg" },
+      { "name": "Пряжки", "image": "/images/categories/furnitura-metallicheskaya-pryazhki.jpg" },
+      { "name": "Рамки", "image": "/images/categories/furnitura-metallicheskaya-ramki.jpg" }
+    ]
+  },
+  "Фурнитура пластмассовая": {
+    "slug": "furnitura-plastmassovaya",
+    "image": "/images/categories/furnitura-plastmassovaya-zazhimy.jpg",
+    "children": [
+      { "name": "Зажимы и наконечники", "image": "/images/categories/furnitura-plastmassovaya-zazhimy.jpg" },
+      { "name": "Кедер", "image": "/images/categories/furnitura-plastmassovaya-keder.jpg" },
+      { "name": "Пластик листовой", "image": "/images/categories/furnitura-plastmassovaya-plastik-listovoy.jpg" },
+      { "name": "Полукольца", "image": "/images/categories/furnitura-plastmassovaya-polukolca.jpg" },
+      { "name": "Пряжки", "image": "/images/categories/furnitura-plastmassovaya-pryazhki.jpg" },
+      { "name": "Пуговицы", "image": "/images/categories/furnitura-plastmassovaya-pugovicy.jpg" },
+      { "name": "Пукли", "image": "/images/categories/furnitura-plastmassovaya-pukli.jpg" },
+      { "name": "Ручки", "image": "/images/categories/furnitura-plastmassovaya-ruchki.jpg" },
+      { "name": "Фастексы", "image": "/images/categories/furnitura-plastmassovaya-fasteksy.jpg" }
+    ]
+  },
+  "Резинка": {
+    "slug": "rezinka",
+    "image": "/images/products/product_260.jpg",
+    "children": []
+  },
+  "Сопутствующие материалы": {
+    "slug": "soputstvuyushchie-materialy",
+    "image": "/images/categories/soputstvuyushchie-materialy-plenka.jpg",
+    "children": [
+      { "name": "Пленка", "image": "/images/categories/soputstvuyushchie-materialy-plenka.jpg" },
+      { "name": "Нитки", "image": "/images/categories/soputstvuyushchie-materialy-nitki.jpg" },
+      { "name": "Велькро", "image": "/images/categories/soputstvuyushchie-materialy-velkro.jpg" },
+      { "name": "Шнур, резинка", "image": "/images/categories/soputstvuyushchie-materialy-shnyr-rezinka.jpg" },
+      { "name": "Жилка", "image": "/images/categories/soputstvuyushchie-materialy-jilka.jpg" },
+      { "name": "Колеса, локеры", "image": "/images/categories/soputstvuyushchie-materialy-kolesa-lokery.jpg" },
+      { "name": "Прочее", "image": "/images/categories/soputstvuyushchie-materialy-prochee.jpg" }
+    ]
+  }
+}

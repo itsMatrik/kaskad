@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map((product) => ({
+    params: { slug: product.data.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const { data } = product;
+---
+
+<BaseLayout
+  title={`${data.name} — КаскадТекс`}
+  description={`${data.name}. ${data.category}${data.subcategory ? ', ' + data.subcategory : ''}. Оптовая продажа тканей от КаскадТекс.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-6" aria-label="Хлебные крошки">
+      <ol class="flex items-center gap-2 text-sm text-surface-400">
+        <li><a href="/" class="hover:text-primary-700 transition-colors">Главная</a></li>
+        <li class="text-surface-300">/</li>
+        <li><a href="/#catalog" class="hover:text-primary-700 transition-colors">Каталог</a></li>
+        <li class="text-surface-300">/</li>
+        <li class="text-primary-700 font-medium">{data.name}</li>
+      </ol>
+    </nav>
+
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+      <!-- Product Images -->
+      <div class="space-y-4">
+        <div class="aspect-[3/4] bg-surface-100 rounded-2xl overflow-hidden border border-surface-200 shadow-sm">
+          <img
+            id="main-product-image"
+            src={data.image}
+            alt={data.name}
+            class="w-full h-full object-cover transition-opacity duration-300"
+          />
+        </div>
+        <div class="flex gap-3">
+          <button
+            class="thumbnail-btn w-20 h-24 rounded-xl overflow-hidden border-2 border-primary-600 ring-2 ring-primary-200 transition-all duration-200"
+            data-src={data.image}
+            aria-label="Основное фото"
+          >
+            <img src={data.image} alt="" class="w-full h-full object-cover" />
+          </button>
+          {data.imageHover && (
+            <button
+              class="thumbnail-btn w-20 h-24 rounded-xl overflow-hidden border-2 border-transparent hover:border-primary-300 transition-all duration-200"
+              data-src={data.imageHover}
+              aria-label="Альтернативное фото"
+            >
+              <img src={data.imageHover} alt="" class="w-full h-full object-cover" />
+            </button>
+          )}
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div>
+        <div class="mb-4 flex items-center gap-2 flex-wrap">
+          <span class="inline-flex items-center px-3 py-1.5 bg-primary-50 text-primary-700 text-xs font-bold rounded-lg">
+            {data.category}
+          </span>
+          {data.subcategory && (
+            <span class="inline-flex items-center px-3 py-1.5 bg-primary-50/50 text-primary-600 text-xs font-medium rounded-lg">
+              {data.subcategory}
+            </span>
+          )}
+          {data.inStock ? (
+            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-green-50 text-green-700 text-xs font-bold rounded-lg">
+              <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+              В наличии
+            </span>
+          ) : (
+            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-amber-50 text-amber-700 text-xs font-bold rounded-lg">
+              <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+              Под заказ
+            </span>
+          )}
+        </div>
+
+        <h1 class="text-2xl lg:text-3xl font-bold text-surface-900 mb-3">{data.name}</h1>
+
+        <!-- Specifications -->
+        <div class="bg-surface-50 rounded-2xl border border-surface-200 overflow-hidden mb-6">
+          <h2 class="px-5 py-3.5 bg-primary-50/50 font-bold text-sm text-primary-800 border-b border-surface-200 flex items-center gap-2">
+            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+            Характеристики
+          </h2>
+          <dl class="divide-y divide-surface-100">
+            <div class="px-5 py-3 flex justify-between items-center">
+              <dt class="text-sm text-surface-500">Категория</dt>
+              <dd class="text-sm font-semibold text-surface-800">{data.category}</dd>
+            </div>
+            {data.subcategory && (
+              <div class="px-5 py-3 flex justify-between items-center">
+                <dt class="text-sm text-surface-500">Подкатегория</dt>
+                <dd class="text-sm font-semibold text-surface-800">{data.subcategory}</dd>
+              </div>
+            )}
+            <div class="px-5 py-3 flex justify-between items-center">
+              <dt class="text-sm text-surface-500">Наличие</dt>
+              <dd class="text-sm font-semibold text-surface-800">{data.inStock ? 'В наличии' : 'Под заказ'}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex flex-col sm:flex-row gap-3 mb-5">
+          <a
+            href="/#contacts"
+            class="btn-accent inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-xl text-sm"
+          >
+            Запросить прайс
+          </a>
+        </div>
+
+        <!-- Info Box -->
+        <div class="p-4 bg-accent-50 border border-accent-100 rounded-2xl">
+          <div class="flex gap-3">
+            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <p class="text-sm text-accent-700 leading-relaxed">
+              Цена уточняется по запросу. Итоговая стоимость зависит от объёма заказа и условий доставки.
+              Свяжитесь с нами для получения точного расчёта.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back Link -->
+    <div class="mt-10 pt-8 border-t border-surface-200">
+      <a
+        href="/#catalog"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-800 transition-colors duration-200"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
+        Вернуться в каталог
+      </a>
+    </div>
+  </div>
+</BaseLayout>

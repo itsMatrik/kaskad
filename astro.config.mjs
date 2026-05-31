@@ -12,5 +12,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      oxc: false,   // возвращает старый API, с которым 4.3.0 дружит
+    },
   },
 });

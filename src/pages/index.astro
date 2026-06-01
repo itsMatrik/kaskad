@@ -90,7 +90,7 @@ const PRODUCTS_PER_PAGE = 12;
         <div class="flex-1">
           <!-- Active Category Breadcrumb -->
           <div id="active-category-breadcrumb" class="hidden mb-4">
-            <div class="inline-flex items-center gap-2 px-3 py-2 bg-primary-50 border border-primary-200 rounded-xl text-sm">
+            <div id="breadcrumb-pill" class="inline-flex items-center gap-2 px-3 py-2 bg-primary-50 border border-primary-200 rounded-xl text-sm cursor-pointer hover:bg-primary-100 transition-colors">
               <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
               <span id="breadcrumb-text" class="text-primary-700 font-medium"></span>
               <button id="breadcrumb-clear" class="ml-1 text-primary-400 hover:text-primary-700 transition-colors" aria-label="Сбросить категорию">
@@ -104,7 +104,7 @@ const PRODUCTS_PER_PAGE = 12;
 
           <div
             id="product-grid"
-            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5"
+            class="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-5"
           >
             {allProducts.map((product, index) => (
               <div

@@ -12,24 +12,24 @@ const totalPages = Math.ceil(totalProducts / perPage);
   <div id="pagination-info" class="text-sm text-surface-500">
     Страница <span id="pagination-current" class="font-bold text-primary-700">1</span> из <span id="pagination-total" class="font-bold text-primary-700">{totalPages}</span>
   </div>
-  <nav id="pagination-nav" class="flex items-center gap-1.5" aria-label="Навигация по страницам">
+  <nav id="pagination-nav" class="flex flex-wrap items-center justify-center gap-1.5" aria-label="Навигация по страницам">
     <button
       id="pagination-prev"
-      class="pagination-btn inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-surface-600 bg-white border border-surface-200 rounded-lg hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-surface-600 disabled:hover:border-surface-200 transition-all duration-200"
+      class="pagination-btn inline-flex items-center justify-center w-9 h-9 sm:w-auto sm:h-auto gap-1 sm:px-3 sm:py-2 text-sm font-medium text-surface-600 bg-white border border-surface-200 rounded-lg hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-surface-600 disabled:hover:border-surface-200 transition-all duration-200"
       disabled
       aria-label="Предыдущая страница"
     >
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-      Назад
+      <span class="hidden sm:inline">Назад</span>
     </button>
     <div id="pagination-numbers" class="flex items-center gap-1">
     </div>
     <button
       id="pagination-next"
-      class="pagination-btn inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-surface-600 bg-white border border-surface-200 rounded-lg hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-surface-600 disabled:hover:border-surface-200 transition-all duration-200"
+      class="pagination-btn inline-flex items-center justify-center w-9 h-9 sm:w-auto sm:h-auto gap-1 sm:px-3 sm:py-2 text-sm font-medium text-surface-600 bg-white border border-surface-200 rounded-lg hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-surface-600 disabled:hover:border-surface-200 transition-all duration-200"
       aria-label="Следующая страница"
     >
-      Вперёд
+      <span class="hidden sm:inline">Вперёд</span>
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
     </button>
   </nav>
